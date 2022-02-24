@@ -3,7 +3,7 @@ Automatically download RetroArch, Windows cores, Additional DLLs for cores to wo
 
 # INSTRUCTIONS
 1) Download the RAScript.bat 
-2) Place it wherever you want
+2) Create a folder named "RA" and place the script inside it
 3) Run RAScript.bat
 
 # What does it do?
