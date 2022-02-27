@@ -2,12 +2,6 @@ echo "Git cloning RetroArch & old cores..."
 git clone --recurse-submodules -j8 https://github.com/libretro/RetroArch.git
 git clone https://github.com/Gamr13/old_cores.git
 git clone https://gitlab.com/Gamr13/old_cores1.git
-move /Y ".\old_cores\ADLLS.7z" "..\RA" 
-move /Y ".\old_cores\ADLLS2.7z" "..\RA"
-move /Y ".\old_cores\old_cores.7z" "..\RA"
-move /Y ".\old_cores\m2014.7z" "..\RA"
-move /Y ".\old_cores\m2015.7z" "..\RA"
-move /Y ".\old_cores1\m2016.7z" "..\RA"
 
 echo "Downloading RetroArch cores..."
 curl "https://buildbot.libretro.com/nightly/windows/x86_64/RetroArch_cores.7z" --Output cores.7z
@@ -16,21 +10,14 @@ curl "http://195.90.212.190/Files/Angle%%20Cores/parallel_n64_libretro.dll" --Ou
 curl "http://195.90.212.190/Files/Angle%%20Cores/yabasanshiro_libretro.dll" --Output yabasanshiro_libretro.dll
 
 echo "Extracting Files..."
-"C:\Program Files\7-Zip\7z.exe" x cores.7z -aoa -o".\cores"
-"C:\Program Files\7-Zip\7z.exe" x "old_cores.7z" -aoa -o".\old_cores"
-"C:\Program Files\7-Zip\7z.exe" x "m2014.7z" -aoa -o".\old_cores"
-"C:\Program Files\7-Zip\7z.exe" x "m2015.7z" -aoa -o".\old_cores"
-"C:\Program Files\7-Zip\7z.exe" x "m2016.7z" -aoa -o".\old_cores1"
-"C:\Program Files\7-Zip\7z.exe" x "ADLLS.7z" -aoa -o".\ADLLS"
-"C:\Program Files\7-Zip\7z.exe" x "ADLLS2.7z" -aoa -o".\ADLLS"
-
-echo "Moving core dependencies..."
-move /Y ".\ADLLS\*" "RetroArch\pkg\msvc-uwp\RetroArch-msvc2019-UWP\cores\x64\"
-
-echo "Moving core files..."
-move /Y ".\cores\RetroArch-Win64\cores\*" "RetroArch\pkg\msvc-uwp\RetroArch-msvc2019-UWP\cores\x64\cores\"
-move /Y ".\old_cores\*.dll" "RetroArch\pkg\msvc-uwp\RetroArch-msvc2019-UWP\cores\x64\cores\"
-move /Y ".\old_cores1\*.dll" "RetroArch\pkg\msvc-uwp\RetroArch-msvc2019-UWP\cores\x64\cores\"
+"C:\Program Files\7-Zip\7z.exe" x "cores.7z" -aoa -o".\cores"
+move /Y ".\cores\RetroArch-Win64\cores\*" "%~dp0RetroArch\pkg\msvc-uwp\RetroArch-msvc2019-UWP\cores\x64\cores"
+"C:\Program Files\7-Zip\7z.exe" x ".\old_cores\old_cores.7z" -aoa -o"%~dp0RetroArch\pkg\msvc-uwp\RetroArch-msvc2019-UWP\cores\x64\cores"
+"C:\Program Files\7-Zip\7z.exe" x ".\old_cores\m2014.7z" -aoa -o"%~dp0RetroArch\pkg\msvc-uwp\RetroArch-msvc2019-UWP\cores\x64\cores"
+"C:\Program Files\7-Zip\7z.exe" x ".\old_cores\m2015.7z" -aoa -o"%~dp0RetroArch\pkg\msvc-uwp\RetroArch-msvc2019-UWP\cores\x64\cores"
+"C:\Program Files\7-Zip\7z.exe" x ".\old_cores1\m2016.7z" -aoa -o"%~dp0RetroArch\pkg\msvc-uwp\RetroArch-msvc2019-UWP\cores\x64\cores"
+"C:\Program Files\7-Zip\7z.exe" x ".\old_cores\ADLLS.7z" -aoa -o"%~dp0RetroArch\pkg\msvc-uwp\RetroArch-msvc2019-UWP\cores\x64"
+"C:\Program Files\7-Zip\7z.exe" x ".\old_cores\ADLLS2.7z" -aoa -o"%~dp0RetroArch\pkg\msvc-uwp\RetroArch-msvc2019-UWP\cores\x64"
 
 echo "Deleting non-ANGLE core files..."
 del "RetroArch\pkg\msvc-uwp\RetroArch-msvc2019-UWP\cores\x64\cores\mupen64plus_next_libretro.dll"
