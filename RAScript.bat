@@ -20,7 +20,6 @@ move /Y ".\cores\RetroArch-Win64\cores\*" "%~dp0RetroArch\pkg\msvc-uwp\RetroArch
 "C:\Program Files\7-Zip\7z.exe" x ".\old_cores\ADLLS2.7z" -aoa -o"%~dp0RetroArch\pkg\msvc-uwp\RetroArch-msvc2019-UWP\cores\x64"
 
 echo "Deleting non-ANGLE core files..."
-del "RetroArch\pkg\msvc-uwp\RetroArch-msvc2019-UWP\cores\x64\cores\mupen64plus_next_libretro.dll"
 del "RetroArch\pkg\msvc-uwp\RetroArch-msvc2019-UWP\cores\x64\cores\parallel_n64_libretro.dll"
 del "RetroArch\pkg\msvc-uwp\RetroArch-msvc2019-UWP\cores\x64\cores\yabasanshiro_libretro.dll"
 
@@ -38,5 +37,5 @@ echo Y|rmdir /s ".\ADLLS"
 
 echo "Deleting broken RetroArch cores..."
 cd "RetroArch\pkg\msvc-uwp\RetroArch-msvc2019-UWP\cores\x64\cores\"
-del .empty bk_*.dll craft*.dll easyrpg*.dll mednafen_psx_hw*.dll mednafen_snes*.dll mednafen_gba*.dll bsnes_mer*.dll bsnes2*.dll mesen-s*.dll minivm*.dll arduous*.dll boom3*.dll boom3*.dll citra*.dll crocods*.dll frodo*.dll gong*.dll jaxe*.dll jumpnbump*.dll mrboom*.dll mu_*.dll nekop2*.dll oberon*.dll play_*.dll race*.dll sameduck*.dll snes9x2*.dll squirreljme*.dll stella2*.dll tyrquake*.dll vitaquake2*.dll wasm4*.dll                    							
+del citra*.dll .empty mednafen_psx_hw*.dll                   							
 pause 
