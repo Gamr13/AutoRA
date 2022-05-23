@@ -43,5 +43,6 @@ echo Y|rmdir /s ".\old_cores1"
 
 echo !ESC![101;93m Deleting known broken cores... !ESC![0m
 cd "RetroArch\pkg\msvc-uwp\RetroArch-msvc2019-UWP\cores\x64\cores\"
-del .empty mednafen_psx_hw*.dll citra*.dll play_libretro.dll                   							
+del .empty mednafen_psx_hw*.dll citra*.dll play_libretro.dll 
+echo "Deleted .empty, mednafen_psx_hw, citra, play!"                  							
 pause 
