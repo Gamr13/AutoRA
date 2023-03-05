@@ -20,18 +20,18 @@ curl "http://195.90.212.190/Files/Angle%%20Cores/yabasanshiro_libretro.dll" --Ou
 
 echo !ESC![101;93m Extracting files... !ESC![0m
 "C:\Program Files\7-Zip\7z.exe" x "cores.7z" -aoa -o".\cores"
-move /Y ".\cores\RetroArch-Win64\cores\*" "%~dp0RetroArch\pkg\msvc-uwp\RetroArch-msvc2019-UWP\cores\x64\cores"
-"C:\Program Files\7-Zip\7z.exe" x ".\old_cores\old_cores.7z" -aoa -o"%~dp0RetroArch\pkg\msvc-uwp\RetroArch-msvc2019-UWP\cores\x64\cores"
-"C:\Program Files\7-Zip\7z.exe" x ".\old_cores\m2014.7z" -aoa -o"%~dp0RetroArch\pkg\msvc-uwp\RetroArch-msvc2019-UWP\cores\x64\cores"
-"C:\Program Files\7-Zip\7z.exe" x ".\old_cores\m2015.7z" -aoa -o"%~dp0RetroArch\pkg\msvc-uwp\RetroArch-msvc2019-UWP\cores\x64\cores"
-"C:\Program Files\7-Zip\7z.exe" x ".\old_cores1\m2016.7z" -aoa -o"%~dp0RetroArch\pkg\msvc-uwp\RetroArch-msvc2019-UWP\cores\x64\cores"
-"C:\Program Files\7-Zip\7z.exe" x ".\old_cores\ADLLS.7z" -aoa -o"%~dp0RetroArch\pkg\msvc-uwp\RetroArch-msvc2019-UWP\cores\x64"
-"C:\Program Files\7-Zip\7z.exe" x ".\old_cores\ADLLS2.7z" -aoa -o"%~dp0RetroArch\pkg\msvc-uwp\RetroArch-msvc2019-UWP\cores\x64"
+move /Y ".\cores\RetroArch-Win64\cores\*" "%~dp0RetroArch\pkg\msvc-uwp\RetroArch-msvcUWP\cores\x64\cores"
+"C:\Program Files\7-Zip\7z.exe" x ".\old_cores\old_cores.7z" -aoa -o"%~dp0RetroArch\pkg\msvc-uwp\RetroArch-msvcUWP\cores\x64\cores"
+"C:\Program Files\7-Zip\7z.exe" x ".\old_cores\m2014.7z" -aoa -o"%~dp0RetroArch\pkg\msvc-uwp\RetroArch-msvcUWP\cores\x64\cores"
+"C:\Program Files\7-Zip\7z.exe" x ".\old_cores\m2015.7z" -aoa -o"%~dp0RetroArch\pkg\msvc-uwp\RetroArch-msvcUWP\cores\x64\cores"
+"C:\Program Files\7-Zip\7z.exe" x ".\old_cores1\m2016.7z" -aoa -o"%~dp0RetroArch\pkg\msvc-uwp\RetroArch-msvcUWP\cores\x64\cores"
+"C:\Program Files\7-Zip\7z.exe" x ".\old_cores\ADLLS.7z" -aoa -o"%~dp0RetroArch\pkg\msvc-uwp\RetroArch-msvcUWP\cores\x64"
+"C:\Program Files\7-Zip\7z.exe" x ".\old_cores\ADLLS2.7z" -aoa -o"%~dp0RetroArch\pkg\msvc-uwp\RetroArch-msvcUWP\cores\x64"
 
 
 echo !ESC![101;93m Moving ANGLE cores... !ESC![0m
-move /Y "parallel_n64_libretro.dll" "RetroArch\pkg\msvc-uwp\RetroArch-msvc2019-UWP\cores\x64\cores\"
-move /Y "yabasanshiro_libretro.dll" "RetroArch\pkg\msvc-uwp\RetroArch-msvc2019-UWP\cores\x64\cores\"
+move /Y "parallel_n64_libretro.dll" "RetroArch\pkg\msvc-uwp\RetroArch-msvcUWP\cores\x64\cores\"
+move /Y "yabasanshiro_libretro.dll" "RetroArch\pkg\msvc-uwp\RetroArch-msvcUWP\cores\x64\cores\"
 
 
 echo !ESC![101;93m Cleaning up files... !ESC![0m
@@ -42,7 +42,7 @@ echo Y|rmdir /s ".\old_cores1"
 
 
 echo !ESC![101;93m Deleting known broken cores... !ESC![0m
-cd "RetroArch\pkg\msvc-uwp\RetroArch-msvc2019-UWP\cores\x64\cores\"
+cd "RetroArch\pkg\msvc-uwp\RetroArch-msvcUWP\cores\x64\cores\"
 del .empty mednafen_psx_hw*.dll citra*.dll play_libretro.dll 
 echo "Deleted .empty, mednafen_psx_hw, citra, play!"                  							
 pause 
