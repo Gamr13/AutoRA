@@ -11,9 +11,7 @@ These are required for the script to run.
 
 # What does it do?
 1) git clones RetroArch master branch and gets older versions of cores for added compatibility
-2) Downloads fresh ANGLE Cores (for Xbox users) and regular cores
-3) Extracts both ANGLE cores and regular cores
-4) Moves the files to the correct directories and deletes the non-ANGLE cores
-5) Copies the ANGLE cores
-6) Deletes any of the left-over files
-7) Deletes any broken cores / bloat cores / game engines (as tested on Xbox)
+2) Downloads fresh cores
+3) Extracts cores
+4) Moves the files to the correct directories and deletes confirmed not-working cores
+5) Deletes any of the left-over files
